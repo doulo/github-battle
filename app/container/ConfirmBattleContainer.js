@@ -1,5 +1,4 @@
 var React = require('react');
-var PropTypes = React.PropTypes;
 var ConfirmBattle = require('../components/ConfirmBattle');
 var githubHelpers = require('../util/githubHelpers');
 
@@ -19,7 +18,7 @@ var ConfirmBattleContainer = React.createClass({
       .then(function (players) {
         this.setState({
           isLoading: false,
-          playersInfo: [players[0], players[1]]
+          playerInfo: [players[0], players[1]]
         })
       }.bind(this))
   },
