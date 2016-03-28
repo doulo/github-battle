@@ -4,16 +4,13 @@ var styles = require('../style');
 var Link = require('react-router').Link;
 var UserDetails = require('./UserDetail');
 var UserDetailWrapper = require('./UserDetailWrapper');
+var MainContainer = require('./MainContainer');
 //writing a stateless function
-
-function puke (object) {
-  return <pre>{JSON.stringify(object, null, ' ')}</pre>
-}
 
 function ConfirmBattle (props) {
   return props.isLoading === true
   ? <p>LOADING!</p>
-    : <div className="jumbotron col-sm-12 text-center" style={styles.transparentBg}>
+  : <MainContainer>
         <h1>Confirm Players</h1>
         <div className='col-sm-8 col-sm-offset-2'>
           <UserDetailWrapper header='Player One'>
@@ -35,7 +32,7 @@ function ConfirmBattle (props) {
             </Link>
           </div>
         </div>
-      </div>
+      </MainContainer>
 }
 
 ConfirmBattle.PropTypes = {
