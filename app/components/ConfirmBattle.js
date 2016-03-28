@@ -5,11 +5,12 @@ var Link = require('react-router').Link;
 var UserDetails = require('./UserDetail');
 var UserDetailWrapper = require('./UserDetailWrapper');
 var MainContainer = require('./MainContainer');
+var Loading = require('./Loading');
 //writing a stateless function
 
 function ConfirmBattle (props) {
   return props.isLoading === true
-  ? <p>LOADING!</p>
+  ? <Loading speed={100} text='Waiting' />
   : <MainContainer>
         <h1>Confirm Players</h1>
         <div className='col-sm-8 col-sm-offset-2'>
